@@ -1,0 +1,51 @@
+<p>Parent is working</p>
+<!-- <app-button>
+        <header><h1>Angular</h1></header>
+        <h1 id="v">One framework. Mobile & desktop.</h1>
+        <footer><b>Super-powered by Google </b></footer>
+<!-- </app-button> -->
+     
+<!-- <app-button [title]=title2>
+    <ng-container ngProjectAs="heade">
+        <header><h1 #head>Angular</h1></header>
+        <h1 id="v">One framework. Mobile & desktop.</h1>
+        <footer><b>Super-powered by Google </b></footer>
+    </ng-container>
+    
+</app-button>  -->
+<!-- <app-button>
+    <ng-container>
+        <header><h1>Angular</h1></header>
+    </ng-container>
+    
+</app-button> -->
+
+
+<!-- OnChange Life cycle Hook -->
+<!-- <input 
+ type="text" 
+ class="form-control"
+ placeholder="Enter the title"
+ [(ngModel)]="title">
+<input 
+ type="text"
+ class="form-control"
+ placeholder="Enter the code"
+ [(ngModel)]="code">
+<button 
+ class="btn btn-primary"
+ (click)="onUpdate()">Update</button>
+<!-- <app-button [title]=title2 [customer]=customer></app-button> -->
+<!-- <app-button >
+    <b>Injected</b> content from the <i>Parent</i>
+</app-button>
+message from child {{message}} -->
+<!-- <button >Click me</button> -->
+
+<ul>
+    <li *ngFor="let product of productDetails">
+        <a [routerLink]="['button',product.id]" [queryParams]="{value:2}" >{{product.name}}</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
+  

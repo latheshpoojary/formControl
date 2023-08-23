@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm, NgModel } from '@angular/forms';
+import { ApiService } from './shared/api.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'formControl';
+ 
+ constructor(){
+  console.log("hello");
+  
+ }
+  
 }

@@ -1,0 +1,74 @@
+<!-- <div class="card">
+  <div class="content">
+    <ng-content>     
+    </ng-content>
+  </div>
+  <div class="header">
+    <ng-content>     
+    </ng-content>
+  </div>
+  <div class="footer">
+    <ng-content>     
+    </ng-content>
+  </div> -->
+
+  <!-- <p>Customer Name {{ customer.name }} </p> -->
+  <!-- <p>Customer Code {{ customer.code }} </p> -->
+  <!-- <p>Do Check count {{ DocheckCount }} </p>
+  <ul>
+    <li *ngFor="let log of changelog">
+      {{log}}
+    </li>
+  </ul> -->
+  <!-- <div class="footer" style="color: red;">
+    <ng-content select="footer"></ng-content>
+  </div> -->
+  <!-- <div class="view">
+    <ng-content select="#v"></ng-content>
+    
+  </div>
+  <div class="footer">
+    <ng-content select="footer"></ng-content>
+  </div> -->
+<!-- </div> -->
+
+
+<!-- ngContentInit and NgViewInit -->
+<!-- 
+<h2>Child Component</h2>
+    
+message : <input [(ngModel)]="message">
+
+<p> Injected Content Below</p> -->
+<!-- <ng-content></ng-content> -->
+
+
+<!-- Safe traversal operator and NonNull Assertion operator -->
+
+<!-- <p>Street {{street}}</p>
+<button [innerText]="innerText" [disabled]=isDisabled>Save Me</button>
+
+<table class="table" style="border: 1px solid red;">
+  <tr style="border: 1px solid red;">
+    <td>Hello</td>
+    <td>There</td>
+    <td>Any</td>
+  </tr>
+  <tr style="border: 1px solid red;">
+    <td [attr.colspan]="spanValue">Column</td>
+    <td [style.display]="'none'">There</td>
+    
+  </tr>
+</table> -->
+<p>---------Child--------------</p>
+
+<ul>
+  <li *ngFor="let product of productList">
+      <a routerLink="/post" [queryParams]="{page:2}" queryParamsHandling="preserve">{{product.name}}</a>
+  </li>
+</ul>
+<p>Inside the Child</p>
+<p [class]="['hh','kk','ll']">{{id}}</p> 
+<button routerLink="/parent">Send to Parent</button>
+<button routerLink="product">Get Product</button>
+<router-outlet></router-outlet>

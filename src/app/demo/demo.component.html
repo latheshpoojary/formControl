@@ -1,0 +1,60 @@
+<div class="container p-3">
+    <h1 class="text-center">Form Control</h1>
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label class="form-label">Name:</label>
+        <input 
+         type="text "
+         placeholder="Full name" 
+         class="form-control "
+         name="fullname"
+         formControlName="fullname"
+         >
+      </div>
+
+      <div class="alert alert-danger" *ngIf="form.fullname.touched && form.fullname.invalid">
+        Full Name should not be empty
+      </div>
+     
+      <div class="form-group mb-3">
+        <label class="form-label">Email:</label>
+        <input type="email" 
+        placeholder="Email" 
+        class="form-control" 
+        name="email" 
+        formControlName="email"
+        >
+      </div>
+
+      <div class="alert alert-danger" *ngIf="form.email.touched && form.email.invalid">
+        Email is invalid
+      </div>
+      <div formGroupName="address">
+        <div class="form-group mb-3">
+            <label class="form-label">Village:</label>
+            <input type="text" class="form-control" name="village" formControlName="village">
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Pincode:</label>
+            <input type="text" class="form-control" name="pincode" formControlName="pincode">
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Post:</label>
+            <input type="text" class="form-control" name="post" formControlName="post">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="">Skill</label>
+        <input
+        type="text"
+        placeholder="Skill"
+        class="form-control"
+        #skill
+        (keyup.enter)="addSkill(skill)"
+      />
+      </div>
+     
+      <button class="btn btn-primary" >submit</button>
+    </form>
+  </div>

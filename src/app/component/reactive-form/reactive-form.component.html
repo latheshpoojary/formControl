@@ -1,0 +1,89 @@
+<div class="container p-3">
+  <h1 class="text-center">Reactive Form</h1>
+  <form [formGroup]="formInput" (ngSubmit)="display()">
+    <div class="form-group mb-3">
+      <label class="form-label">Name:</label>
+      <input
+        type="text "
+        placeholder="Full name"
+        class="form-control"
+        name="fullName"
+        formControlName="fullName"
+      />
+      <div class="loader" *ngIf="fullname.pending">
+          checking for existing name.....
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="fullname.touched && fullname.invalid"
+      >
+        Name field not be empty
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label class="form-label">Email:</label>
+      <input
+        type="email"
+        placeholder="Email"
+        class="form-control"
+        name="Email"
+        formControlName="email"
+      />
+    </div>
+    <div formGroupName="address">
+      <div class="form-group mb-3">
+        <label class="form-label">Contact:</label>
+        <textarea
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Contact"
+          class="form-control"
+          name="contact"
+          formControlName="contact"
+        ></textarea>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="contact.touched && contact.invalid"
+      >
+        contact is invalid
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-label">Pincode:</label>
+        <textarea
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Address"
+          class="form-control"
+          name="pincode"
+          formControlName="pincode"
+        ></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Skill</label>
+      <input
+        type="text"
+        placeholder="Skill"
+        class="form-control"
+        #skill
+        (keyup.enter)="addSkill(skill)"
+      />
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let skill of Skill.controls; index as i"
+        >
+          {{ skill.value }}
+          <a class="btn btn-sm btn-danger" (click)="removeSkill(i)">X</a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="btn btn-primary mt-3" [disabled]="formInput.invalid">
+      submit
+    </button>
+  </form>
+</div>

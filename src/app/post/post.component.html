@@ -1,0 +1,22 @@
+<p>post works!</p>
+<button (click)="onLogout()">Logout</button>
+<button routerLink="/parent">Go to Parent</button>
+<div [formGroup]="form">
+    <input 
+type="text"
+placeholder="Enter title"
+(keyup.enter)="createPost(title)" #title
+formControlName="title">
+</div>
+
+<ul class="list-group">
+    <li 
+        *ngFor="let post of posts;index as i"
+        class="list-group-item">
+            <span [class.addRed]="post?.isRed">{{post.title}}</span>
+            
+    
+    <button class="btn btn-primary" (click)="updatePost(post)">Turn Red</button>
+    <button class="btn btn-danger" (click)="onDelete(post)">Delete</button>
+    </li>
+</ul>

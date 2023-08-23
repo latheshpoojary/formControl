@@ -1,0 +1,49 @@
+<div class="container p-3">
+    <h1 class="text-center">Form Control</h1>
+    <form #form='ngForm' (ngSubmit)="display(form)">
+      <div class="form-group mb-3">
+        <label class="form-label">Name:</label>
+        <input 
+         type="text "
+         placeholder="Full name" 
+         class="form-control " 
+         [class.is-invalid]="fullName.touched && !fullName.valid"
+         name="name"
+         
+         ngModel 
+         #fullName='ngModel'
+
+         (change)="getInput(fullName)"
+        
+         required
+         >
+         <div class="alert alert-danger" *ngIf="fullName.touched && fullName.invalid">
+          Name field not be empty
+         </div>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-label">Email:</label>
+        <input type="email" placeholder="Email" class="form-control" name="email" ngModel required>
+  
+      </div>
+
+      <div ngModelGroup="address">
+ 
+        <p>
+          <label for="city">City</label>
+          <input type="text" name="city" ngModel>
+        </p>
+     
+        <p>
+          <label for="street">Street</label>
+          <input type="text" name="street" ngModel>
+        </p>
+        <p>
+          <label for="pincode">Pin Code</label>
+          <input type="text" name="pincode" ngModel>
+        </p>
+     
+    </div>
+      <button class="btn btn-primary" >submit</button>
+    </form>
+  </div>
